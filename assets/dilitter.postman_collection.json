@@ -1,0 +1,363 @@
+{
+	"info": {
+		"name": "dilitter",
+		"_postman_id": "03e8bd5f-90d4-5706-cfa8-c82001f32b9d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "local",
+			"description": "",
+			"item": [
+				{
+					"name": "show-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{base-url}}/{{project-name}}/show-users",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{project-name}}",
+								"show-users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "show-users",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "dd4954d7-7f29-4541-a134-07a691ca2657",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.set(\"UserName\", \"variable_value\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "UserName",
+									"value": "Dylan",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/{{project-name}}/show-users",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{project-name}}",
+								"show-users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "user-login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b3207701-c23d-40f6-9f78-279036607cd4",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.set(\"UserName\", \"variable_value\");",
+									"",
+									"pm.environment.set(\"Password\", \"variable_value\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "UserName",
+									"value": "admin",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "admin",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/{{project-name}}/login",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{project-name}}",
+								"login"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "user-register",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "326bc2d9-6d94-4290-a376-0221e4ecf419",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.set(\"UserName\", \"variable_value\");",
+									"",
+									"pm.environment.set(\"Password\", \"variable_value\");",
+									"",
+									"pm.environment.set(\"NickName\", \"variable_value\");",
+									"",
+									"pm.environment.set(\"Email\", \"variable_value\");",
+									"",
+									"pm.environment.set(\"Birthday\", \"variable_value\");",
+									"",
+									"pm.environment.set(\"Region\", \"variable_value\");",
+									"",
+									"pm.environment.set(\"UserType\", \"variable_value\");",
+									"",
+									"",
+									"",
+									"pm.environment.set(\"userJson\", \"[{\\\"birthday\\\":\\\"2017-02-09 11:11:11\\\",\\\"password\\\":\\\"123\\\",\\\"nickName\\\":\\\"Flash\\\",\\\"userType\\\":1,\\\"region\\\":\\\"上海奉贤\\\",\\\"userName\\\":\\\"zhang\\\",\\\"email\\\":\\\"zhang@dilitter.com\\\"}]\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "UserName",
+									"value": "zhangwenlong",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "NickName",
+									"value": "dragonzhang",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "dragonz@dilitter.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Birthday",
+									"value": "2017-12-12 11:11:11",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Region",
+									"value": "上海奉贤",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "UserType",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "userJson",
+									"value": "{{userJson}}",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/{{project-name}}/register",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{project-name}}",
+								"register"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "user-delete",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c46f1a02-f105-4c6c-8693-501e3320ef1d",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.set(\"UserName\", \"variable_value\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "UserName",
+									"value": "zhang",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/{{project-name}}/delete",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{project-name}}",
+								"delete"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "send-tweet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e51f8abb-27f5-4511-b416-2e2038c0d653",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.set(\"tweetJson\", \"[{\\\"userName\\\":\\\"Dylan\\\",\\\"releaseTime\\\": 1513518540000,\\\"likeCount\\\":5,\\\"dislikeCount\\\":3,\\\"wordContent\\\":\\\"东北老菜馆的锅包肉好好吃啊！\\\",\\\"attitude\\\":0}]\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "tweetJson",
+									"value": "{{tweetJson}}",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/{{project-name}}/send-tweet",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{project-name}}",
+								"send-tweet"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "server",
+			"description": "",
+			"item": [
+				{
+					"name": "show-users copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{base-url}}/{{project-name}}/show-users",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"{{project-name}}",
+								"show-users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
