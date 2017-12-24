@@ -6,6 +6,7 @@
 		});
 	function ctrl($scope,LoginFactory){
 		var info = alert;
+		LoginFactory.postHuawei();
 		$scope.login = function(){
 			LoginFactory.login($scope.UserName,$scope.Password,cb);
 			function cb(err,res){

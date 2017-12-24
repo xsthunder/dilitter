@@ -14,6 +14,24 @@
 				cb(res);
 			});
 		}
+		self.getHuawei = function(){
+			$http.get('http://l.lovecust.com/huawei').then( 
+				function(res){
+					console.log(res);
+				}, function(res){
+					console.log(res);
+				});
+		}
+		self.postHuawei = function(){
+			$http.post('http://l.lovecust.com/huawei',{
+				data:"hello"
+			}).then( 
+				function(res){
+					console.log(res);
+				}, function(res){
+					console.log(res);
+				});
+		}
 		return self;
 	}
 })();
