@@ -1,3 +1,14 @@
-<input type='text' ng-model='UserName'>
-<input type='text' ng-model='Password'>
-<button ng-click='login()'>login</button>
+  <md-content layout="column"  layout-align="space-between center">
+      <md-input-container class="md-block" >
+        <label>UserName</label>
+        <input ng-model="UserName">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Password</label>
+        <input ng-model="Password" >
+      </md-input-container>
+
+			<md-button ng-click='login()' class="md-raised md-warn">login</md-button>
+    </div>
+  </md-content>

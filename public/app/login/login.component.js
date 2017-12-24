@@ -4,17 +4,18 @@
 			templateUrl:'/app/login/login.html',
 			controller:ctrl
 		});
-	function ctrl($scope,LoginFactory){
+	function ctrl($scope,urlCnst){
 		var info = alert;
-		LoginFactory.postHuawei();
+		$scope.UserName = 'admin';
+		$scope.Password= 'admin';
 		$scope.login = function(){
-			LoginFactory.login($scope.UserName,$scope.Password,cb);
+			//userService.login($scope.UserName,$scope.Password,cb);
 			function cb(err,res){
 				if(err||res['err']){
-					info(res.msg);
+					info(res.message);
 				}
-				else info(res.msg);
+				else info(res.message);
 			}
 		}
 	}
-})()
+})();

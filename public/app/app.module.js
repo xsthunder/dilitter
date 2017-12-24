@@ -1,4 +1,4 @@
 'use strict';
 (function(){
-	angular.module('app',[]);
+	angular.module('app',['ngMaterial', 'ngMessages']);
 })();
