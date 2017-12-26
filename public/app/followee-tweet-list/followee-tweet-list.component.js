@@ -8,7 +8,16 @@
                 templateUrl:'/app/followee-tweet-list/followee-tweet-list.html',
                 controller:fn
             });
-    function fn() {
-
+    function fn($scope,userService) {
+        $scope.reload = function () {
+            $scope.tweets=[];
+            reload();
+        };
+        var reload= function () {
+            userService.getFolloweeTweetList(function (err,res) {
+                if(!err) $scope.tweets = res;
+            });
+        };
+        $scope.reload();
     }
 })();

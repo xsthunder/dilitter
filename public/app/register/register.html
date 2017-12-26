@@ -1,4 +1,4 @@
-<md-subheader md-theme="docs-dark" class="md-warn">必填</md-subheader>
+<md-subheader md-theme="docs-dark" class="md-warn">账号信息</md-subheader>
 <md-content md-theme="docs-dark" layout="column" layout-padding layout-align="space-between center">
     <md-content layout-gt-xs="row">
         <md-input-container>
@@ -11,26 +11,26 @@
         </md-input-container>
     </md-content>
 </md-content>
-<md-subheader class="md-warn">可选</md-subheader>
+<md-subheader class="md-warn">个人信息</md-subheader>
 <md-content layout-padding layout="column" layout-align="space-between center">
     <div layout="column">
         <div layout-gt-xs="row">
             <md-input-container layout-gt-xs="row">
                 <label>nickName</label>
-                <input ng-model="user.nickName">
+                <input ng-model="user.nickName" required>
             </md-input-container>
             <md-input-container>
                 <label>Email</label>
-                <input ng-model="user.email" type="email">
+                <input ng-model="user.email" type="email" required>
             </md-input-container>
         </div>
         <md-input-container>
             <label>region</label>
-            <input ng-model="user.region">
+            <input ng-model="user.region" required>
         </md-input-container>
         <md-input-container>
             <label>birthday</label>
-            <md-datepicker ng-model="user.birthday"></md-datepicker>
+            <md-datepicker ng-model="user.birthday" required></md-datepicker>
         </md-input-container>
         <md-content layout="column" layout-align="space-between center">
             <md-button ng-click='register()' class="md-raised md-warn">register</md-button>

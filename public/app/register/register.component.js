@@ -21,13 +21,18 @@
         }
         $scope.register =function () {
             var user = angular.copy($scope.user);
-            console.log(user);
+            for(var i in user){
+                if(!user[i]){
+                    userService.notice('None of the area can be empty');
+                    return;
+                }
+            }
             if(user.birthday){
                 var d = user.birthday;
                 user.birthday = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate() +' ' + '11:11:11';
             }
             if(!user.userName||!user.password)userService.notice("either userName or password can be empty");
-            else userService.register({ userJson:[user] } ,cb);
+            else userService.register(user ,cb);
         }
     }
 })();

@@ -5,8 +5,8 @@
 		var self = {};
 		self.login = function(name,pwd,cb){
 		    urlCnst.post('login',{
-		        UserName:name,
-				Password:pwd
+                userName:name,
+                password:pwd
 			},cb);
 		};
 		self.getProfile = function (name, cb) {
@@ -21,7 +21,10 @@
 		    urlCnst.post('register',obj,cb);
         };
 		self.getFolloweeList = function (name,cb) {
-		    urlCnst.post('show-users',{UserName:name},cb);
+		    urlCnst.post('show-followees',{FollowerName:name},cb);
+        };
+		self.getFolloweeTweetList = function (name,cb) {
+			urlCnst.post('show-followee-tweets',{FollowerName:name},cb)
         };
 		return self;
 	}
