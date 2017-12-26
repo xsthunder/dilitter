@@ -1,0 +1,24 @@
+<md-content layout-padding layout="column" layout-align="">
+    <div layout="column" flex>
+        <div flex="30">
+            <h3>感觉</h3>
+            <md-radio-group ng-model="tweet.attitude">
+                <md-radio-button value="0" class="md-primary">好吃</md-radio-button>
+                <md-radio-button value="1">难吃</md-radio-button>
+            </md-radio-group>
+        </div>
+        <div flex="10"></div>
+        <div layout="column" flex="50">
+            <h3>吃了什么？</h3>
+            <md-input-container class="md-block" >
+                <label>内容</label>
+                <textarea ng-model="user.wordContent" md-maxlength="255" rows="3" md-select-on-focus></textarea>
+            </md-input-container>
+        </div>
+    </div>
+    <div layout="column" layout-align="space-between center">
+    <md-button class="md-raised md-warn" ng-click="send(tweet)">
+        推送
+    </md-button>
+        </div>
+</md-content>

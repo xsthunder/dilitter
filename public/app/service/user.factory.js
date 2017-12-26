@@ -26,6 +26,9 @@
 		self.getFolloweeTweetList = function (name,cb) {
 			urlCnst.post('show-followee-tweets',{FollowerName:name},cb)
         };
+		self.sendTweet = function (obj,cb) {
+		    urlCnst.post('send-tweet',obj,cb);
+        };
 		return self;
 	}
 })();

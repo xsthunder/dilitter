@@ -82,6 +82,13 @@
                 else cb(null,self.followeeList);
             }
         };
+        self.sendTweet = function (obj,cb) {
+            obj.userName = self.name;
+            function now (err,res) {
+                self.wrap(null,err,res,null,cb);
+            }
+            userFactory.sendTweet(obj,now);
+        };
         return self;
     }
 })();
