@@ -1,0 +1,39 @@
+<md-subheader md-theme="docs-dark" class="md-warn">必填</md-subheader>
+<md-content md-theme="docs-dark" layout="column" layout-padding layout-align="space-between center">
+    <md-content layout-gt-xs="row">
+        <md-input-container>
+            <label>userName</label>
+            <input ng-model="user.userName" required >
+        </md-input-container>
+        <md-input-container>
+            <label>password</label>
+            <input ng-model="user.password"  type="password" required>
+        </md-input-container>
+    </md-content>
+</md-content>
+<md-subheader class="md-warn">可选</md-subheader>
+<md-content layout-padding layout="column" layout-align="space-between center">
+    <div layout="column">
+        <div layout-gt-xs="row">
+            <md-input-container layout-gt-xs="row">
+                <label>nickName</label>
+                <input ng-model="user.nickName">
+            </md-input-container>
+            <md-input-container>
+                <label>Email</label>
+                <input ng-model="user.email" type="email">
+            </md-input-container>
+        </div>
+        <md-input-container>
+            <label>region</label>
+            <input ng-model="user.region">
+        </md-input-container>
+        <md-input-container>
+            <label>birthday</label>
+            <md-datepicker ng-model="user.birthday"></md-datepicker>
+        </md-input-container>
+        <md-content layout="column" layout-align="space-between center">
+            <md-button ng-click='register()' class="md-raised md-warn">register</md-button>
+        </md-content>
+    </div>
+</md-content>

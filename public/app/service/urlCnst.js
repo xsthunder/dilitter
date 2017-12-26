@@ -15,12 +15,14 @@
         };
         self.post = function (url,obj,cb) {
             var data ="";
-            for(var i in obj){
-                if(data)data += '&';
-                data = data + i +'='+ obj[i];
-            }
-            $http.post(self.baseUrl+url, data,{
-                headers:{'Content-Type':'application/x-www-form-urlencoded'}
+            $http.post(self.baseUrl+url, obj,{
+                headers:{'Content-Type':'application/x-www-form-urlencoded'},
+                transformRequest:function(obj) {
+                    var str = [];
+                    for(var p in obj)
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                    return str.join("&");
+                }
             }).then(function (res) {
                 cb(null,res.data);
             },function () {

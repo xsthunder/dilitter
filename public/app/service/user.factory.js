@@ -9,13 +9,19 @@
 				Password:pwd
 			},cb);
 		};
-		self.profile = function (name,cb) {
+		self.getProfile = function (name, cb) {
 			urlCnst.post('show-users',{
 				UserName:name
             },cb);
         };
 		self.getAllUsers = function (cb) {
 		    urlCnst.get('show-users',cb);
+        };
+		self.register = function (obj,cb) {
+		    urlCnst.post('register',obj,cb);
+        };
+		self.getFolloweeList = function (name,cb) {
+		    urlCnst.post('show-users',{UserName:name},cb);
         };
 		return self;
 	}

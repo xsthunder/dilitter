@@ -9,16 +9,16 @@
         var self = {};
         self.profile = null;
         self.name = null;
+        self.followeeList = null;
         self.notice = function (msg) {
             msg = msg||"something wrong";
-            console.log(msg);
             $mdToast.show(
                 $mdToast.simple()
                     .textContent(msg)
                     .hideDelay(3000)
             );
         };
-        self.notice();
+        self.register = userFactory.register;
         self.wrap = function (s,err,res,ans,cb) {
             if(err)self.notice();
             else (err = res['error']);
@@ -31,18 +31,32 @@
                 self.wrap('name', err,res,name,cb);
             });
         };
-        self.getProfile = function (name,cb) {
-            if(name){
-                userFactory.getProfile(name,cb);
-            }
+        self.getProfile = function (name, cb) {
+            if(name){ userFactory.getProfile(name,cb); }
             else {
                 function now(err,res) {
                     self.wrap('profile',err,res,res['result'][0],cb);
                 }
                 if(!self.profile){
-                    userFactory.profile(self.name,now);
+                    // TODO 如果允许更新个人profile
+                    userFactory.getProfile(self.name,now);
                 }
-                else cb(null,self.profile);
+                else cb(null,self.getProfile);
+            }
+        };
+        self.getFolloweeList = function (name,cb) {
+            // 根据推特，不允许查询别人的followee
+            name = null;
+            if(name){ userFactory.getfolloweeList(name,cb); }
+            else {
+                function now(err,res) {
+                    self.wrap('followeeList',err,res,res['result'],cb);
+                }
+                if(!self.followeeList){
+                    // TODO 如果允许关注用户
+                    userFactory.getProfile(self.name,now);
+                }
+                else cb(null,self.followeeList);
             }
         };
         return self;
