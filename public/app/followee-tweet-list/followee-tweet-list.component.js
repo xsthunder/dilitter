@@ -25,5 +25,6 @@
             else userService.getFolloweeTweetList(cb);
         }
         $scope.reload();
+        $scope.personInfo = userService.personInfo;
     }
 })();

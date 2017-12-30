@@ -1,8 +1,7 @@
 <md-content layout-padding>
     <md-list>
-        <md-list-item ng-repeat="user in users">
-                    <span class="md-button md-fab md-mini"
-                          ng-click="gotoUser(user)">{{user.substring(0,1)}}</span>
+        <md-list-item ng-repeat="user in users" ng-click="personInfo(user)">
+                    <span class="md-button md-fab md-mini" >{{user.substring(0,1)}}</span>
             <span>{{user}}</span>
             <md-divider></md-divider>
         </md-list-item>

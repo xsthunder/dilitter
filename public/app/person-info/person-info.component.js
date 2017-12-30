@@ -11,7 +11,7 @@
         (function () {
             function cb(err,res) {
                 if(!err)$scope.profile = res;
-                console.log($scope.profile);
+                // console.log($scope.profile);
             }
             //TODO read user from router params
             userService.getProfile($stateParams['userName'],cb);

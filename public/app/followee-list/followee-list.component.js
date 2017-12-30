@@ -17,6 +17,7 @@
             $scope.users = [];
             reload();
         };
+        $scope.personInfo = userService.personInfo;
         reload();
     }
 })();
