@@ -14,7 +14,7 @@
                 $scope.close();
             };
             $scope.logout= function () {
-                $state.go('login');
+                $state.goto('login');
             };
             $scope.routers = [
                 {
@@ -28,7 +28,10 @@
                     name: 'user.followee-list',
                     alias: '关注的人'
                 } ];
-            $scope.personInfo=userService.personInfo;
+            $scope.personInfo=function () {
+                $scope.close();
+                userService.personInfo();
+            }
         }
     }
 )();
