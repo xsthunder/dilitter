@@ -13,6 +13,9 @@
                 $state.go(name);
                 $scope.close();
             };
+            $scope.logout= function () {
+                $state.go('login');
+            };
             $scope.routers = [
                 {
                     name: 'user.followee-tweet-list',

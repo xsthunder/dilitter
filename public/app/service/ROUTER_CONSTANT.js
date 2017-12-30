@@ -31,6 +31,13 @@
             name: 'user.person-info',
             url: '/user/person-info',
             component: 'xxPersonInfo'
+        }, {
+            name: "otherwise",
+            url: "*path",
+            controller: function ($state) {
+                $state.go('login');
+            }
+
         }
     ];
     angular.module('app')
