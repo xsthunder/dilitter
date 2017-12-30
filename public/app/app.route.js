@@ -8,14 +8,10 @@
     function fn($stateProvider) {
         var States= [{
             name: 'login',
-            url: '/',
+            url: '/login',
             component:'xxLogin'
-        },
-         {
-            name:'user',
-            url:'/user',
-            templateUrl:'./app/user.html'
         }
+
         ];
         States.forEach($stateProvider.state);
     }

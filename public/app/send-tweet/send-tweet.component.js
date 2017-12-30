@@ -12,9 +12,11 @@
             userName:"",
             wordContent:"",
             attitude:0
-        }
+        };
         $scope.send= function (obj) {
             obj.releaseTime=+new Date();
+            if(!obj.wordContent)return userService.notice("Text area should not be empty");
+            //console.log(obj);
             obj.wordContent = obj.wordContent.substring(0,255);
             function cb(err,res) {
 

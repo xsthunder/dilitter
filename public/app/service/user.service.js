@@ -9,6 +9,7 @@
         var self = {};
         self.profile = null;
         self.name = 'zhang';
+        // self.name = 'Dylan';
         self.followeeList = null;
         self.notice = function (msg) {
             msg = msg||"something wrong";
@@ -24,7 +25,7 @@
             if(!err&&s)self[s] = ans;
             if(res['message'])self.notice(res['message']);
             if(ans)res = ans;
-            cb(err,res);
+            cb(err,res['result']||res);
         };
         self.register =function (obj,cb) {
             userFactory.register(obj, function (err,res) {
