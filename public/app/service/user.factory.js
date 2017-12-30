@@ -29,6 +29,9 @@
 		self.sendTweet = function (obj,cb) {
 		    urlCnst.post('send-tweet',obj,cb);
         };
+		self.getTweetList = function (name,cb) {
+		    urlCnst.post('show-tweets',{UserName:name},cb);
+        };
 		return self;
 	}
 })();

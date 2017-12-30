@@ -7,13 +7,14 @@
             templateUrl:'./app/person-info/person-info.html',
             controller:fn
         });
-    function fn($scope,userService) {
+    function fn($scope,$stateParams,userService) {
         (function () {
             function cb(err,res) {
                 if(!err)$scope.profile = res;
+                console.log($scope.profile);
             }
             //TODO read user from router params
-            userService.getProfile(null,cb);
+            userService.getProfile($stateParams['userName'],cb);
         })();
     }
 })();

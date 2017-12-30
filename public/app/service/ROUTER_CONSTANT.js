@@ -29,7 +29,7 @@
             component: 'xxSendTweet'
         }, {
             name: 'user.person-info',
-            url: '/user/person-info',
+            url: '/user/person-info/{userName}',
             component: 'xxPersonInfo'
         }, {
             name: "otherwise",

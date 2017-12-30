@@ -15,12 +15,15 @@
                 <md-list-item ng-click="goto(router.name)" ng-repeat="router in routers">
                     {{router.alias||router.name}}
                 </md-list-item>
+                <md-list-item ng-click="personInfo()" >
+                    个人信息
+                </md-list-item>
             </md-list>
             <md-content layout="column" layout-align="spacebetween center">
                 <md-button ng-click="close()" class="md-warn md-raised" hide-gt-md>
                     Close Panel
                 </md-button>
-                <md-button ng-click="logout()" class="md-raised" hide-gt-md>
+                <md-button ng-click="logout()" class="md-raised" >
                     Logout
                 </md-button>
             </md-content>

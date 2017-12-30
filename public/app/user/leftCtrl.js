@@ -2,7 +2,7 @@
         angular.module('app')
             .controller('leftCtrl', fn);
 
-        function fn($scope, $timeout, $mdSidenav, $state, ROUTER_CONSTANT) {
+        function fn($scope, $timeout, $mdSidenav, $state, userService) {
             $scope.close = function () {
                 // Component lookup should always be available since we are not using `ng-if`
                 $mdSidenav('left').close()
@@ -27,10 +27,8 @@
                 }, {
                     name: 'user.followee-list',
                     alias: '关注的人'
-                }, {
-                    name: 'user.person-info',
-                    alias: '个人信息'
-                }];
+                } ];
+            $scope.personInfo=userService.personInfo;
         }
     }
 )();

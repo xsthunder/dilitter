@@ -5,19 +5,25 @@
     angular.module('app')
         .component('xxFolloweeTweetList',
             {
-                templateUrl:'/app/followee-tweet-list/followee-tweet-list.html',
-                controller:fn
+                templateUrl: '/app/followee-tweet-list/followee-tweet-list.html',
+                controller: fn
             });
-    function fn($scope,userService) {
+
+    function fn($scope, $stateParams, userService) {
         $scope.reload = function () {
-            $scope.tweets=[];
+            $scope.tweets = [];
             reload();
         };
-        var reload= function () {
-            userService.getFolloweeTweetList(function (err,res) {
-                if(!err) $scope.tweets = res;
-            });
-        };
+        function reload() {
+            function cb(err, res) {
+                if (!err) $scope.tweets = res;
+            }
+            var name = $stateParams['userName'];
+            if (name) {
+                userService.getTweetList(name, cb);
+            }
+            else userService.getFolloweeTweetList(cb);
+        }
         $scope.reload();
     }
 })();
