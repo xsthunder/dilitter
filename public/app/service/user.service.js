@@ -26,9 +26,9 @@
                 if (err) self.notice();
                 else (err = res['error']);
                 if (!err && s) self[s] = ans;
-                if (res['message']) self.notice(res['message']);
+                if (!err&&res['message']) self.notice(res['message']);
                 if (ans) res = ans;
-                cb(err, res['result'] || res);
+                cb(err, res?(res['result'] || res):null);
             };
             self.register = function (obj, cb) {
                 userFactory.register(obj, function (err, res) {
@@ -105,6 +105,18 @@
                 }
 
                 userFactory.sendTweet(obj, now);
+            };
+            self.showUserList = function (cb) {
+                function now(err,res) {
+                    self.wrap(null,err,res,null,cb);
+                }
+                userFactory.showUserList(now);
+            };
+            self.deleteUser = function (name,cb) {
+                function now(err,res) {
+                    self.wrap(null,err,res,null,cb);
+                }
+                userFactory.deleteUser(name,now);
             };
             return self;
         }

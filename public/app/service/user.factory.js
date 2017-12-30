@@ -32,6 +32,12 @@
 		self.getTweetList = function (name,cb) {
 		    urlCnst.post('show-tweets',{UserName:name},cb);
         };
+		self.showUserList = function (cb) {
+		    urlCnst.get('show-users',cb);
+        };
+		self.deleteUser = function (name,cb) {
+		    urlCnst.post('delete',{UserName:name},cb);
+        };
 		return self;
 	}
 })();

@@ -1,0 +1,28 @@
+<md-content layout="column" flex>
+    <md-content layout-padding>
+        <md-content layout-padding>
+            <md-card  layout="column" ng-repeat="profile in users">
+                <md-card-title-text>
+                    <span><i class="material-icons">perm_identity</i>{{profile['nickName']+'@'+profile['userName']}}</span>
+                    <br/>
+                    <span><i class="material-icons">today</i>{{profile['birthday'].substring(5)}}</span>
+                    <br/>
+                    <span><i class="material-icons">place</i> {{profile['region']}}</span>
+                    <br/>
+                    <span><i class="material-icons">email</i>{{' '+profile['email']}}</span>
+                </md-card-title-text>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-raised md-primary" ng-click="deleteUser(profile.userName)">
+                        Delete
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+
+        </md-content>
+        <md-content layout="column" layout-align="spacebetween center">
+            <md-button ng-click="reload()" class="md-warn md-raised">
+                reload
+            </md-button>
+        </md-content>
+    </md-content>
+</md-content>
