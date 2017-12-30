@@ -21,7 +21,9 @@
             </md-button>
         </md-content>
     </md-sidenav>
-    <!--md-scroll-shrink-->
-    <ui-view layout-fill layout="column" flex></ui-view>
+    <md-content layout-fill layout="column">
+        <xx-toolbar></xx-toolbar>
+        <ui-view layout-fill layout="column" flex></ui-view>
+    </md-content>
 </md-content>
 
