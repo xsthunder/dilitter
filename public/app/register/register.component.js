@@ -8,7 +8,7 @@
             templateUrl:'/app/register/register.html',
             controller:fn
         });
-    function fn($scope,userService) {
+    function fn($scope,$state,userService) {
         $scope.user = {
             userName:"",
             password:"",
@@ -18,6 +18,8 @@
             userType:1
         };
         function cb(err,res) {
+            //console.log(err,res);
+            if(!err)$state.go('login');
         }
         $scope.register =function () {
             var user = angular.copy($scope.user);

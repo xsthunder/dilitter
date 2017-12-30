@@ -5,14 +5,8 @@
 (function () {
     angular.module('app')
         .config(fn);
-    function fn($stateProvider) {
-        var States= [{
-            name: 'login',
-            url: '/login',
-            component:'xxLogin'
-        }
-
-        ];
-        States.forEach($stateProvider.state);
+    function fn($stateProvider,ROUTER_CONSTANT) {
+        console.log(ROUTER_CONSTANT);
+        ROUTER_CONSTANT.forEach($stateProvider.state);
     }
 })();

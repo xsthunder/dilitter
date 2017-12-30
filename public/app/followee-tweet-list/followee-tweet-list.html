@@ -1,27 +1,36 @@
-<md-content layout-padding>
-<div ng-repeat="tweet in tweets | orderBy :'releaseTime'">
-    <div layout="row">
-        <div>
+<md-content  layout="column" flex>
+    <md-content layout-padding>
+        <md-content >
+            <div ng-repeat="tweet in tweets | orderBy :'releaseTime'">
+                <div layout="row">
+                    <div>
             <span class="md-button md-fab md-mini"
                   ng-click="gotoUser(tweet.userName)">{{tweet.userName.substring(0,1)}}</span>
-        </div>
-        <div layout="column" flex>
-            <div layout="row" flex>
-                <span class="md-body-2">{{tweet.userName}}</span>
-                <div flex></div>
-                <div layout-align="end end">
-                    <span class="md-body-2">{{tweet.releaseTime | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                    </div>
+                    <div layout="column" flex>
+                        <div layout="row" flex>
+                            <span class="md-body-2">{{tweet.userName}}</span>
+                            <div flex></div>
+                            <div layout-align="end end">
+                                <span class="md-body-2">{{tweet.releaseTime | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                            </div>
+                            <md-icon class="md-secondary material-icons" title="推荐" ng-if="!tweet.attitude">mood
+                            </md-icon>
+                            <md-icon class="md-secondary material-icons" title="不推荐" ng-if="tweet.attitude">mood_bad
+                            </md-icon>
+                        </div>
+                        <br>
+                        {{tweet.wordContent}}
+                    </div>
                 </div>
-                <md-icon class="md-secondary material-icons" title="推荐" ng-if="!tweet.attitude">mood </md-icon>
-                <md-icon class="md-secondary material-icons" title="不推荐" ng-if="tweet.attitude">mood_bad</md-icon>
+                <md-divider></md-divider>
             </div>
-            <br>
-            {{tweet.wordContent}}
-        </div>
-    </div>
-    <md-divider></md-divider>
-</div>
-    <md-button ng-click="reload()">
-        reload
-    </md-button>
+
+        </md-content>
+        <md-content layout="column" layout-align="spacebetween center">
+            <md-button ng-click="reload()">
+                reload
+            </md-button>
+        </md-content>
+    </md-content>
 </md-content>

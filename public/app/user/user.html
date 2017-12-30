@@ -1,38 +1,27 @@
-<md-content layout-fill layout="row">
+<md-content layout="row" layout-fill>
     <md-sidenav
             class="md-sidenav-left"
             md-component-id="left"
             md-is-locked-open="$mdMedia('gt-md')"
             md-whiteframe="4">
 
-        <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Sidenav Left</h1>
-        </md-toolbar>
+        <div>
+            <md-toolbar class="md-warn">
+                <h1 class="md-toolbar-tools">Panel</h1>
+            </md-toolbar>
+        </div>
         <md-content layout-padding ng-controller="leftCtrl">
+            <md-list>
+                <md-list-item ng-click="goto(router.name)" ng-repeat="router in routers">
+                    {{router.alias||router.name}}
+                </md-list-item>
+            </md-list>
             <md-button ng-click="close()" class="md-primary" hide-gt-md>
-                Close Sidenav Left
+                Close Panel
             </md-button>
-            <p hide show-gt-md>
-                This sidenav is locked open on your device. To go back to the default behavior,
-                narrow your display.
-            </p>
         </md-content>
-
     </md-sidenav>
-
-    <md-content flex>
-        <md-toolbar class="md-warn" md-scroll-shrink ng-if="true" >
-            <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" ng-click="toggleLeft()">
-                    <i class="material-icons">menu</i>
-                </md-button>
-                <div flex layout='column' layout-align="space-between center">
-                    <h3>
-                        <span>{{title}}</span>
-                    </h3>
-                </div>
-            </div>
-        </md-toolbar>
-    </md-content>
+    <!--md-scroll-shrink-->
+    <ui-view layout-fill layout="column" flex></ui-view>
 </md-content>
 
