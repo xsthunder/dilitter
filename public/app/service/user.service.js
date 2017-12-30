@@ -45,7 +45,6 @@
                     self.wrap(null, err, res, res['result'], cb);
                 }
 
-                // TODO 如果允许更新个人profile
                 userFactory.getProfile(self.name, now);
             };
             self.getTweetList = function (name, cb) {

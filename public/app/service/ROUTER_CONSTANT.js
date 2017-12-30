@@ -32,6 +32,11 @@
             url: '/user/person-info/{userName}',
             component: 'xxPersonInfo'
         }, {
+            name: 'user.edit-user-list',
+            url: '/user/edit-user-list',
+            component: 'xxEditUserList'
+        },
+        {
             name: "otherwise",
             url: "*path",
             controller: function ($state) {

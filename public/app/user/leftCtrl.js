@@ -3,6 +3,7 @@
             .controller('leftCtrl', fn);
 
         function fn($scope, $timeout, $mdSidenav, $state, userService) {
+            $scope.isAdmin = userService.name === 'admin';
             $scope.close = function () {
                 // Component lookup should always be available since we are not using `ng-if`
                 $mdSidenav('left').close()
@@ -14,7 +15,10 @@
                 $scope.close();
             };
             $scope.logout= function () {
-                $state.goto('login');
+                $scope.goto('login');
+            };
+            $scope.editUserList=function () {
+                $scope.goto('user.edit-user-list');
             };
             $scope.routers = [
                 {
@@ -29,8 +33,8 @@
                     alias: '关注的人'
                 } ];
             $scope.personInfo=function () {
-                $scope.close();
                 userService.personInfo();
+                $scope.close();
             }
         }
     }
