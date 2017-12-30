@@ -26,7 +26,7 @@
                 if (err) self.notice();
                 else (err = res['error']);
                 if (!err && s) self[s] = ans;
-                if (!err&&res['message']) self.notice(res['message']);
+                if (res['message']) self.notice(res['message']);
                 if (ans) res = ans;
                 cb(err, res?(res['result'] || res):null);
             };
@@ -50,7 +50,7 @@
             self.getTweetList = function (name, cb) {
                 function now(err, res) {
                     if (err) res = [];
-                    if (!res.length) self.notice("No tweets currently");
+                    //if (!res.length) self.notice("No tweets currently");
                     cb(err, res);
                 }
 
