@@ -6,3 +6,14 @@
     /*height: 5.6rem;*/
     /*border-radius: 50%;*/
 /*}*/
+/*.ng-scope{*/
+    /*height: 100%;*/
+/*}*/
+
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 150px !important;
+    width: 50vw !important;
+    max-width: 180px !important;
+}

@@ -21,6 +21,9 @@
             //console.log(err,res);
             if(!err)$state.go('login');
         }
+        $scope.back = function(){
+            $state.go('login');
+        };
         $scope.register =function () {
             var user = angular.copy($scope.user);
             for(var i in user){

@@ -1,19 +1,21 @@
-<md-toolbar class="md-warn">
-    <h1  style="text-align: center">Dilitter</h1>
-</md-toolbar>
-<md-content layout="column" layout-padding layout-align="space-between center">
-    <form>
-        <md-input-container class="md-block">
-            <label>UserName</label>
-            <input ng-model="UserName">
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>Password</label>
-            <input ng-model="Password" type="password">
-        </md-input-container>
-        <md-content  layout-align="space-between center">
-            <md-button ng-click='login()' class="md-raised md-warn">login</md-button>
-            <md-button ng-click='register()' class="md-raised md-warn">register</md-button>
-        </md-content>
-    </form>
+<md-content layout-fill>
+    <md-toolbar class="md-warn">
+        <h1 style="text-align: center">Dilitter</h1>
+    </md-toolbar>
+    <md-content layout="column" layout-padding layout-align="space-between center">
+        <form>
+            <md-input-container class="md-block">
+                <label>UserName</label>
+                <input ng-model="UserName">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input ng-model="Password" type="password">
+            </md-input-container>
+            <md-content layout-align="space-between center">
+                <md-button ng-click='login()' class="md-raised md-warn">login</md-button>
+                <md-button ng-click='register()' class="md-raised md-warn">register</md-button>
+            </md-content>
+        </form>
+    </md-content>
 </md-content>
