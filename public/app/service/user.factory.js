@@ -38,6 +38,12 @@
 		self.deleteUser = function (name,cb) {
 		    urlCnst.post('delete',{UserName:name},cb);
         };
+		self.showAdminTweetList = function (cb) {
+		    urlCnst.get('show-tweets-admin',cb);
+        };
+        self.showAdminTweetListInRange = function (start,end,cb) {
+            urlCnst.post('show-tweets-admin',{startTime:start,endTime:end},cb);
+        };
 		return self;
 	}
 })();

@@ -35,6 +35,10 @@
             name: 'user.edit-user-list',
             url: '/user/edit-user-list',
             component: 'xxEditUserList'
+        }, {
+            name:'user.admin-tweet-list',
+            url:'/user/admin-tweet-list',
+            component:'xxAdminTweetList'
         },
         {
             name: "otherwise",

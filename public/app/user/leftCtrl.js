@@ -20,6 +20,9 @@
             $scope.editUserList=function () {
                 $scope.goto('user.edit-user-list');
             };
+            $scope.adminTweetList = function () {
+                $scope.goto('user.admin-tweet-list');
+            };
             $scope.routers = [
                 {
                     name: 'user.followee-tweet-list',

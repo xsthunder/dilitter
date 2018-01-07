@@ -18,9 +18,14 @@
                 <md-list-item ng-click="personInfo()" >
                     个人信息
                 </md-list-item>
-                <md-list-item ng-click="editUserList()" ng-if="isAdmin">
-                   管理用户
-                </md-list-item>
+                <div  ng-if="isAdmin">
+                    <md-list-item ng-click="editUserList()" >
+                       管理用户
+                    </md-list-item>
+                    <md-list-item ng-click="adminTweetList()">
+                        管理美食推
+                    </md-list-item>
+                </div>
             </md-list>
             <md-content layout="column" layout-align="spacebetween center">
                 <md-button ng-click="close()" class="md-warn md-raised" hide-gt-md>

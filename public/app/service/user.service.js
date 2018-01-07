@@ -70,7 +70,6 @@
                         });
                         res = ans;
                     }
-                    if (!res.length) self.notice("No tweets currently");
                     cb(null, res);
                 }
 
@@ -116,6 +115,13 @@
                     self.wrap(null,err,res,null,cb);
                 }
                 userFactory.deleteUser(name,now);
+            };
+            self.showAdminTweetList = function (start,end,cb) {
+                function now (err,res) {
+                    self.wrap(null,err,res,null,cb);
+                }
+                if(!start&&!end)userFactory.showAdminTweetList(now);
+                else userFactory.showAdminTweetListInRange(start,end,now)
             };
             return self;
         }
