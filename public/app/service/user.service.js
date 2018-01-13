@@ -85,14 +85,9 @@
                 }
                 else {
                     function now(err, res) {
-                        self.wrap('followeeList', err, res, res['result'], cb);
+                        self.wrap(null, err, res, res['result'], cb);
                     }
-
-                    if (!self.followeeList) {
-                        // TODO 如果允许关注用户
-                        userFactory.getFolloweeList(self.name, now);
-                    }
-                    else cb(null, self.followeeList);
+                    userFactory.getFolloweeList(self.name, now);
                 }
             };
             self.sendTweet = function (obj, cb) {
@@ -122,6 +117,12 @@
                 }
                 if(!start&&!end)userFactory.showAdminTweetList(now);
                 else userFactory.showAdminTweetListInRange(start,end,now)
+            };
+            self.followUser= function (followeeName,cb) {
+                function now (err,res) {
+                    self.wrap(null,err,res,null,cb);
+                }
+                userFactory.followUser(self.name,followeeName,now);
             };
             return self;
         }

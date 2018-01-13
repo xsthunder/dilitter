@@ -14,10 +14,10 @@
                 $state.go(name);
                 $scope.close();
             };
-            $scope.logout= function () {
+            $scope.logout = function () {
                 $scope.goto('login');
             };
-            $scope.editUserList=function () {
+            $scope.editUserList = function () {
                 $scope.goto('user.edit-user-list');
             };
             $scope.adminTweetList = function () {
@@ -34,8 +34,12 @@
                 }, {
                     name: 'user.followee-list',
                     alias: '关注的人'
-                } ];
-            $scope.personInfo=function () {
+                }, {
+                    name: 'user.follow-user-list',
+                    alias: '关注用户'
+                }
+            ];
+            $scope.personInfo = function () {
                 userService.personInfo();
                 $scope.close();
             }

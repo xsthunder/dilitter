@@ -39,6 +39,10 @@
             name:'user.admin-tweet-list',
             url:'/user/admin-tweet-list',
             component:'xxAdminTweetList'
+        },{
+            name:'user.follow-user-list',
+            url:'/user/follow-user-list',
+            component:'xxFollowUserList'
         },
         {
             name: "otherwise",

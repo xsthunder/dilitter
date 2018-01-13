@@ -1,7 +1,15 @@
 <md-content layout="column" flex>
     <md-content layout-padding>
         <md-content layout-padding>
-            <md-card  layout="column" ng-repeat="profile in users">
+            <md-content layout="column" layout-align="center center">
+                <md-input-container>
+                    <label>
+                        search user
+                    </label>
+                    <input ng-model="keyword" ng-init="keyword=''">
+                </md-input-container>
+            </md-content>
+            <md-card  layout="column" ng-repeat="profile in users | filter:keyword">
                 <md-card-title-text>
                     <span><i class="material-icons">perm_identity</i>{{profile['nickName']+'@'+profile['userName']}}</span>
                     <br/>
@@ -11,10 +19,15 @@
                     <br/>
                     <span><i class="material-icons">email</i>{{' '+profile['email']}}</span>
                 </md-card-title-text>
+                <!--<md-card-actions layout="row" layout-align="end center">-->
+                    <!--<md-button class="md-raised md-primary" ng-click="deleteUser(profile.userName)">-->
+                        <!--Delete-->
+                    <!--</md-button>-->
+                <!--</md-card-actions>-->
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-raised md-primary" ng-click="deleteUser(profile.userName)">
-                        Delete
-                    </md-button>
+                <md-button class="md-raised md-primary" ng-click="followUser(profile.userName)">
+                follow
+                </md-button>
                 </md-card-actions>
             </md-card>
 

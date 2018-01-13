@@ -3,8 +3,8 @@
  */
 (function () {
     angular.module('app')
-        .component('xxEditUserList', {
-            templateUrl: '/app/edit-user-list/edit-user-list.html',
+        .component('xxFollowUserList', {
+            templateUrl: '/app/follow-user-list/follow-user-list.html',
             controller: fn
         });
 
@@ -18,11 +18,11 @@
             $scope.users = [];
             reload();
         };
-        $scope.deleteUser = function (name) {
+        $scope.followUser= function (name) {
             function now(err,res) {
                 reload();
             }
-            userService.deleteUser(name, now);
+            userService.followUser(name, now);
         };
         $scope.personInfo = userService.personInfo;
         reload();
