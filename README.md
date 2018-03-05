@@ -1,3 +1,4 @@
+数据库作业前端 美食推
 # AngluarJS MVC template with component 
 [编程规范](https://github.com/mgechev/angularjs-style-guide/blob/master/README-zh-cn.md)
 [angularjs doc](https://angularjs.org/)
@@ -16,9 +17,11 @@
 `npm i`安装好依赖,依赖装不上就用[cnpm](http://npm.taobao.org/)
 `npm test`
 浏览器打开http://localhost:8080/
->
+
 ./service放facotry(与服务器交互)和service(与factory和controller的中间层)和./user放整体视图
 其他都是component
+
+```
 .
 ├── [   0]  app
 │   ├── [ 366]  app.module.js
@@ -61,5 +64,6 @@
 │       └── [1.4K]  user.html
 ├── [2.2K]  index.html
 └── [   0]  lib
+```
 
 14 directories, 27 files
